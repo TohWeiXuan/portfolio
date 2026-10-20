@@ -4,17 +4,19 @@
 
     <div class="paragraph">
       <div>
-        I'm <strong>John Matrix</strong>, a former Delta Force operative, now a hobbyist lumberjack.<br/>
-        I spend my days living alone with my daughter Jenny, and cutting trees and carrying trunks around to keep in shape.
+        I'm <strong>Toh Wei Xuan</strong>, a Computer Science student specializing in <strong>Real-Time Interactive Simulation</strong> at the Singapore Institute of Technology.<br/>
+        I enjoy building game systems in C++, from engine architecture and ECS to enemy AI, pathfinding and tools.
+        Most recently I was the Engine Champion on <router-link to="/projects">Soot &amp; Scoot</router-link>, a stealth game built on our team's own C++/OpenGL engine.
       </div>
 
-      <div style="margin-top: 20px;">I've worked on  <router-link to="/game-projects">stuff</router-link>, on <router-link to="/other-projects">other stuff</router-link>, and took part in <router-link to="/resume">a few things</router-link> as well.</div>
+      <div style="margin-top: 20px;">
+        Before university, I spent four years as an <strong>Air Force Engineer</strong> with the Republic of Singapore Air Force, keeping fighter aircraft serviceable.
+        That work taught me systematic troubleshooting, quality control and how to lead a team when reliability matters.
+      </div>
 
-      <div style="margin-top: 40px;">I'm <strong>currently looking for a job</strong> as a monk, like my good friend John Rambo did a few years back. You can reach me at <a href="mailto:johnmatrix@deltaforce.us">johnmatrix@deltaforce.us</a> or <router-link to="/contact">through here</router-link>.</div>
-    </div>
+      <div style="margin-top: 20px;">Take a look at my <router-link to="/projects">projects</router-link> or my <router-link to="/resume">resume</router-link>.</div>
 
-    <div class="photo">
-      <img src="img/avatar.png" alt="Avatar of John" /> 
+      <div style="margin-top: 40px;">I'm <strong>open to opportunities</strong> in game and software development. You can reach me at <a href="mailto:2401687@sit.singaporetech.edu.sg">2401687@sit.singaporetech.edu.sg</a> or <router-link to="/contact">through here</router-link>.</div>
     </div>
 
     <div style="clear:both"></div>
@@ -28,20 +30,9 @@
   margin-bottom: 20px;
 }
 
-.photo {
-  margin-top: 50px;
-  text-align: center;
-}
-
 @media only screen and (min-width: 620px){
   .paragraph {
     float: left;
-  }
-
-  .photo {
-    float: left;
-    padding: 10px;
-    padding-left: 80px;
   }
 }
 

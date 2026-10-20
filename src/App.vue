@@ -28,9 +28,8 @@ export default Vue.extend({
 
 // Preload heavy images or gifs that are used in other pages
 Helpers.preloadImages([
-  "img/projects/project-1-icon.png",
-  "img/projects/project-2-icon.png",
-  "img/projects/project-3-icon.png"
+  "img/projects/soot-and-scoot.jpg",
+  "img/projects/dwarf-mayhem.jpg"
 ]);
 
 </script>

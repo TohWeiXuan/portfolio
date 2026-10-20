@@ -3,119 +3,129 @@
     <h1>Resume</h1>
 
     <div class="paragraph">
-      I'm <strong>John Matrix</strong>, a former Delta Force operative with lots of experience, lots of training and huge muscles.
-      <br />After graduating from kindergarten, I've been enrolled in the army for 25 years, where I learned to destroy things in an amazing number of ways.
-      <br />I joined the Delta Force because I thought it was Greek lessons, but I quickly adapted to this unexpected environment and became a key element.
-      <br />I love teamwork, but I can also go in solo depending on the mission requirements.
+      I'm <strong>Toh Wei Xuan</strong>, a Computer Science student specializing in Real-Time Interactive Simulation, with experience in C++ game development, gameplay systems, AI behaviour and real-time simulation.
       <br />
-      <br />Right now I'm trying to find inner peace after I've read some personal development books. I'm looking for a monk job so if you have any opportunity feel free to 
+      <br />Before university, I was an Air Force Engineer for four years in a high-reliability engineering environment, where I worked on troubleshooting, quality control, process improvement and team leadership.
+      <br />
+      <br />I bring strong problem-solving and technical skills, and experience working collaboratively on software projects. If you have an opportunity in mind, feel free to
       <router-link to="/contact">contact me</router-link>.
-      <br />
-      <br />Besides war, I'm passionate about firearms, martial arts, explosions, push-ups and flowers.
 
       <div style="margin-top:20px; margin-bottom:20px;">
-        <a class="download-link" href="d/resume-en.pdf" target="_blank"><i class="fa fa-download fa-lg fa-fw"></i> Download as PDF 🇬🇧</a>
-        <a class="download-link" href="d/cv-fr.pdf" target="_blank"><i class="fa fa-download fa-lg fa-fw"></i> Télécharger en PDF 🇫🇷</a>
+        <a class="download-link" href="d/Resume-TohWeiXuan.pdf" target="_blank"><i class="fa fa-download fa-lg fa-fw"></i> Download as PDF</a>
         <div style="clear:both"></div>
       </div>
-    </div>
-    <div class="photo">
-      <img src="img/resume-photo.png" alt="Photo of John" />
     </div>
 
     <div style="clear:both"></div>
 
     <div class="full-content">
+      <h2>Projects</h2>
+
+      <h3>Soot &amp; Scoot - Engine Champion</h3>
+      <h4>GAM 200/250, team of 8, Sep 2025 - Apr 2026</h4>
+
+      <ul>
+        <li>Designed and refactored the engine's core Entity Component System (ECS), engine loop, window manager and event manager in C++.</li>
+        <li>Built enemy AI using A* pathfinding on the tilemap with context steering for local obstacle avoidance, plus line-of-sight detection and patrol, look-around, chase and return states.</li>
+        <li>Implemented scene serialization, a prefab system with hot-reload, a tilemap editor and generic RTTR-based undo/redo in the ImGui level editor.</li>
+        <li>Developed a particle system (continuous, burst and trail emitters) and an MPEG video player with audio synced through FMOD for cutscenes.</li>
+        <li>Integrated Lua scripting via sol2, and built the game's scene flow with controller support, fullscreen toggle and pause on focus loss.</li>
+      </ul>
+
+      <div class="tech-stack">C++, OpenGL, ECS, ImGui, RTTR, Lua (sol2), FMOD, CMake</div>
+
+      <h3>Dwarf Mayhem: Into the Depths - Gameplay Programmer</h3>
+      <h4>CSD1451, team of 5, Jan - Mar 2025</h4>
+
+      <ul>
+        <li>Implemented player mining on a pixel-based cellular simulation, with line-traced cell selection, a highlighting smart cursor and an upgradable mining area.</li>
+        <li>Built the inventory system, inventory scene and shop scene for selling ores and buying upgrades (mining size, jetpack, heat armor, full heal).</li>
+        <li>Designed depth-scaled heat damage absorbed by heat armor, with an armor bar and a depth indicator in the UI.</li>
+      </ul>
+
+      <div class="tech-stack">C++, Alpha Engine, cellular automata</div>
+
       <h2>Work experience</h2>
 
-      <h3>Operation Classified - Delta Force</h3>
-      <h4>2018-2019</h4>
+      <h3>Air Force Engineer - Republic of Singapore Air Force (RSAF)</h3>
+      <h4>August 2019 - August 2023, Singapore</h4>
 
-      <div>It's classified so I can't speak about it.</div>
-
-      <div class="tech-stack">Firearms, knives, grenades, Hummer vehicle, parachute,...</div>
-
-      <h3>Operation Classified - Delta Force</h3>
-      <h4>2015-2017</h4>
-
-      <div>It's classified so I can't speak about it.</div>
-
-      <div class="tech-stack">Even more Firearms, knives, grenades, Hummer vehicle, parachute,...</div>
-
-      <h3>Operation Classified - Delta Force</h3>
-      <h4>2012-2015</h4>
-
-      <div>It's classified so I can't speak about it.</div>
-
-      <div class="tech-stack">Firearms, knives, grenades, Hummer vehicle, parachute,...</div>
+      <ul>
+        <li>Maintained the serviceability of fighter aircraft within a high-reliability engineering environment.</li>
+        <li>Applied systematic troubleshooting and problem-solving to aircraft maintenance activities.</li>
+        <li>Implemented new procedures and technologies that improved efficiency and streamlined operations.</li>
+        <li>Led a team to achieve expected maintenance goals while reducing human-factor errors.</li>
+        <li>Applied quality control, technical procedures and effective team communication to maintain operational standards.</li>
+      </ul>
 
       <h2>Skills</h2>
 
       <div class="skill-set">
-        <h3>Lethal</h3>
-        <SkillRate name="Handguns" :rate="5" />
-        <SkillRate name="Rifles" :rate="5" />
-        <SkillRate name="Shotguns" :rate="5" />
-        <SkillRate name="Machineguns" :rate="5" />
-        <SkillRate name="Missile launchers" :rate="5" />
-        <SkillRate name="Knives" :rate="5" />
-        <SkillRate name="Hand to hand combat" :rate="5" />
+        <h3>Programming</h3>
+        <div>C++</div>
+        <div>Lua</div>
+        <div>OpenGL</div>
       </div>
 
       <div class="skill-set">
-        <h3>Non-lethal</h3>
-        <SkillRate name="Sneaking" :rate="1" />
-        <SkillRate name="Negotiation" :rate="1" />
-        <SkillRate name="Seduction" :rate="1" />
-        <SkillRate name="Sense of humor" :rate="2" />
+        <h3>Game development</h3>
+        <div>Real-Time Simulation</div>
+        <div>Gameplay Programming</div>
+        <div>Game Systems</div>
+      </div>
+
+      <div class="skill-set">
+        <h3>Software engineering</h3>
+        <div>Object-Oriented Programming</div>
+        <div>ECS Architecture</div>
+        <div>Debugging</div>
+        <div>Event-Driven Systems</div>
+      </div>
+
+      <div class="skill-set">
+        <h3>Tools</h3>
+        <div>Git</div>
+        <div>CMake</div>
+        <div>Visual Studio</div>
+        <div>ImGui</div>
+        <div>FMOD</div>
+      </div>
+
+      <div class="skill-set">
+        <h3>Technical</h3>
+        <div>Collision Detection</div>
+        <div>A* Pathfinding</div>
+        <div>AI / Steering Behaviour</div>
+        <div>Particle Systems</div>
+        <div>Serialization &amp; Reflection</div>
+        <div>Scene Management</div>
+        <div>UI Integration</div>
+      </div>
+
+      <div class="skill-set">
+        <h3>Professional</h3>
+        <div>Team Collaboration</div>
+        <div>Problem Solving</div>
+        <div>Technical Documentation</div>
+        <div>Technical Reporting</div>
       </div>
       <div style="clear:both" />
 
       <h2>Education</h2>
 
-      <h3>Kindergarten - 1985</h3>
-      <h4>Kindergarten degree</h4>
-      <div>Specialty in bullying and fighting (58 wins, 58 K-O, 0 losses)</div>
+      <h3>Singapore Institute of Technology - September 2024</h3>
+      <h4>Computer Science in Real-Time Interactive Simulation</h4>
 
       <h2>Languages</h2>
 
-      <h3>American</h3>
-      <div>Basic knowledge but I know lots of one-liners</div>
+      <h3>English</h3>
+      <div>Fluent</div>
 
-      <h3>That's it</h3>
-      <div>Who needs another language when you speak American?</div>
-
-
-      <h2>Besides...</h2>
-      <div>
-        <h3>I ❤️ Violence</h3>
-        <div>I find it really soothing to just shoot at bad guys</div>
-
-        <h3>I 🧡 Sports</h3>
-        <div>I used to be thin but then I ingested 10 kilos of steroids and proteins a day while doing 1000 push-ups.</div>
-
-        <h3>I 💛 Politics</h3>
-        <div>I hope I can have a career here someday but I might have temper issues.</div>
-
-        <h3>I 💚 Flowers</h3>
-        <div>Especially the big ones, with the trunk and leaves.</div>
-
-      </div>
+      <h3>Chinese</h3>
+      <div>Native</div>
     </div>
   </div>
 </template>
-
-<script lang="ts">
-import Vue from "vue";
-import SkillRate from "@/components/SkillRate.vue";
-
-export default Vue.extend({
-  name: "Resume",
-  components: {
-    SkillRate,
-  },
-});
-</script>
 
 <style scoped>
 h2 {
@@ -150,7 +160,7 @@ h4 {
   margin-right: 50px;
 }
 
-.full-content div {
+.full-content div, .full-content ul {
   max-width: 800px;
 }
 
@@ -158,18 +168,8 @@ h4 {
   padding-bottom: 10px;
 }
 
-.photo img {
-  height: 300px;
-  width: 300px;
-}
-
 .tech-stack {
   font-style: italic;
-}
-
-.photo {
-  margin-top: 50px;
-  text-align: center;
 }
 
 @media only screen and (min-width: 620px){
@@ -177,15 +177,9 @@ h4 {
     float: left;
   }
 
-  .photo {
-    float: left;
-    padding: 30px;
-    padding-left: 80px;
-  }
-
   .skill-set {
     float: left;
-    padding-right: 60px; 
+    padding-right: 60px;
   }
 }
 </style>
