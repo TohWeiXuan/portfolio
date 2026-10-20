@@ -45,6 +45,18 @@
 
       <div class="tech-stack">C++, Alpha Engine, cellular automata</div>
 
+      <h3>Portal Mayhem - Weapons Programmer</h3>
+      <h4>CSD1401, team of 5, Sep - Nov 2024</h4>
+
+      <ul>
+        <li>Led development of the weapon system in C, covering the portal gun, pistol, grenade launcher and disk launcher.</li>
+        <li>Implemented portal shooting and player teleportation that carries angle and velocity through the exit portal, with a teleport cooldown.</li>
+        <li>Built projectile behaviours including gravity-affected bouncing grenades, disks that split in two after passing through a portal, and area-damage explosions.</li>
+        <li>Managed projectile lifetimes through a shared entity array, and implemented weapon switching and weapon sprite rendering in the game scene.</li>
+      </ul>
+
+      <div class="tech-stack">C, CProcessing</div>
+
       <h2>Work experience</h2>
 
       <h3>Air Force Engineer - Republic of Singapore Air Force (RSAF)</h3>
@@ -63,6 +75,7 @@
       <div class="skill-set">
         <h3>Programming</h3>
         <div>C++</div>
+        <div>C</div>
         <div>Lua</div>
         <div>OpenGL</div>
       </div>
