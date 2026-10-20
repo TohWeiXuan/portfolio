@@ -10,6 +10,12 @@ export default [
         before you get vacuumed out of existence.
     </div>
 
+    <div class="paragraph center">
+        <video class="trailer" controls preload="metadata" poster="video/soot-and-scoot-trailer.jpg">
+            <source src="video/soot-and-scoot-trailer.mp4" type="video/mp4">
+        </video>
+    </div>
+
     <div class="paragraph">
         I was the team's <strong>Engine Champion</strong> and its most active contributor. What I built:
         <ul>
@@ -54,5 +60,31 @@ export default [
         C++ · Alpha Engine · Cellular automata · Team of 5 · Jan to Mar 2025
         </div>
     </div>
-    `, "#b5332a", false, true)
+    `, "#b5332a", false, true),
+    new ProjectData("portal-mayhem", "Portal Mayhem", "img/projects/portal-mayhem.jpg",
+    `
+    <div class="paragraph">
+        <strong>Portal Mayhem</strong> is a 2D survival shooter made by a 5-person team for CSD1401,
+        built in C on DigiPen's CProcessing framework. Monsters pour in and you hold out as long as you can,
+        switching between weapons and using a portal gun to reposition yourself and redirect your shots.
+    </div>
+
+    <div class="paragraph">
+        I was the main author of the weapon system. What I worked on:
+        <ul>
+        <li><strong>Portal gun</strong>: shooting portals and teleporting the player between them, carrying the player's angle and velocity through the exit portal, with a teleport cooldown</li>
+        <li><strong>Pistol</strong>: fire-rate limited shooting with a capped bullet count</li>
+        <li><strong>Grenade launcher</strong>: gravity-affected grenades that bounce off tiles, travel through portals and explode when their timer runs out</li>
+        <li><strong>Disk launcher</strong>: disks that pass through portals and split into two smaller disks after teleporting, with a speed cap</li>
+        <li><strong>Explosions</strong>: short-lived explosion entities that deal area damage to nearby monsters</li>
+        <li><strong>Weapon handling</strong>: weapon switching, projectile lifetimes managed through a shared entity array, and weapon sprite rendering in the game scene</li>
+        </ul>
+    </div>
+
+    <div class="paragraph">
+        <div class="notice">
+        C · CProcessing · Team of 5 · Sep to Nov 2024
+        </div>
+    </div>
+    `, "#c0392b", false, true)
 ];
