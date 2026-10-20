@@ -20,7 +20,7 @@ For a real world use case, check my portfolio: https://schouffy.github.io
 2. Customize
 * For the content
     - Except for the projects pages, everything is static HTML that you can edit directly in the views and components files
-    - For the projects pages, the page is dynamically populated at runtime using data stored in Typescript files (data/GameProjectsData.ts and data/OtherProjectsData.ts). Make the changes directly in these .ts files
+    - For the projects pages, the page is dynamically populated at runtime using data stored in a Typescript file (data/ProjectsData.ts). Make the changes directly in this .ts file
     - Static files (images, icons, downloadables,..) should be placed in /public folder.
     - Make the necessary changes in the .env file (this is mostly the site metadata). You need to "npm run serve" again when updating this file.
 
