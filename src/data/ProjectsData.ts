@@ -44,6 +44,12 @@ export default [
         you dig down through it, collect ores and manage heat and oxygen as you go deeper.
     </div>
 
+    <div class="paragraph center">
+        <video class="trailer" controls preload="metadata" poster="video/dwarf-mayhem-trailer.jpg">
+            <source src="video/dwarf-mayhem-trailer.mp4" type="video/mp4">
+        </video>
+    </div>
+
     <div class="paragraph">
         What I worked on:
         <ul>
@@ -67,6 +73,12 @@ export default [
         <strong>Portal Mayhem</strong> is a 2D survival shooter made by a 5-person team for CSD1401,
         built in C on DigiPen's CProcessing framework. Monsters pour in and you hold out as long as you can,
         switching between weapons and using a portal gun to reposition yourself and redirect your shots.
+    </div>
+
+    <div class="paragraph center">
+        <video class="trailer" controls preload="metadata" poster="video/portal-mayhem-trailer.jpg">
+            <source src="video/portal-mayhem-trailer.mp4" type="video/mp4">
+        </video>
     </div>
 
     <div class="paragraph">
