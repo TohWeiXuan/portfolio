@@ -8,7 +8,7 @@
     <ul>
       <li>
         <i class="fa fa-envelope-o fa-lg fa-fw"></i>
-        <a href="mailto:2401687@sit.singaporetech.edu.sg" target="_blank">2401687@sit.singaporetech.edu.sg</a>
+        <a href="mailto:toh.weixuan@gmail.com" target="_blank">toh.weixuan@gmail.com</a>
       </li>
       <li>
         <i class="fa fa-github fa-lg fa-fw"></i>

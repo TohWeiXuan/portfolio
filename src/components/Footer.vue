@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="footer-inner">
       <div class="left"><a href="https://github.com/schouffy/gamedev-portfolio" target="blank">Portfolio</a> by schouffy</div>
-      <div class="right">Reach me at <a href="mailto:2401687@sit.singaporetech.edu.sg">2401687@sit.singaporetech.edu.sg</a> or <router-link to="/contact">through here</router-link></div>
+      <div class="right">Reach me at <a href="mailto:toh.weixuan@gmail.com">toh.weixuan@gmail.com</a> or <router-link to="/contact">through here</router-link></div>
     </div>
   </div>
 </template>
