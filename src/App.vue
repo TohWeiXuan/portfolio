@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    
+
     <link rel="stylesheet" href="@/assets/projects/projects.css" type="text/css">
 
     <Header />
@@ -42,66 +42,78 @@ Helpers.preloadImages([
 
 html, body {
   margin: 0px;
-  background-color: @bodyBgColor;
+  background-color: @contentBgColor;
 }
 
 #app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background-color: @contentBgColor;
   color: @textColor;
 
-  font-family: 'Karla', Helvetica, Arial, sans-serif;
+  font-family: @bodyFont;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  font-size: 1.1em;
-  line-height: 1.6em;
-  text-align: justify;
+  font-size: 1.0625em;
+  line-height: 1.6;
+  text-align: left;
 }
 
 h1, h2, h3, h4, h5 {
+  font-family: @headingFont;
+  font-weight: 600;
   text-align: left;
 }
 
 a {
-  color: @textColor;
-  text-decoration: none;
-  opacity: 0.5;
+  color: @linkColor;
+  text-decoration: underline;
+  text-decoration-color: @accentColor;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
 }
-a:hover, .router-link-exact-active {
-  opacity: 1;
+a:hover {
+  color: @textColor;
+}
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid @linkColor;
+  outline-offset: 3px;
+}
+
+::selection {
+  background-color: @accentColor;
+  color: @textColor;
 }
 
 h1 {
-  font-size: 2.5em;
-  font-weight: 100;
-  margin-top: -10px;
-  margin-bottom: 40px;
-  margin-left: -2px; // hack to make it "seem" more aligned with smaller text content
-  line-height: 1.1em;
+  font-size: 2.75em;
+  line-height: 1;
+  margin-top: 0.2em;
+  margin-bottom: 32px;
 }
 
 .main {
-    padding: 12px;
+    padding: 12px 16px;
   }
 
 @media only screen and (min-width: 620px){
 
-  #app {
-    text-align: left;
-    line-height: 1.8em;
-  }
-
   h1 {
-    margin-top: 0.67em;
-    margin-bottom: 80px;
-    line-height: 0.7em;
+    font-size: 3.5em;
+    margin-top: 0.4em;
+    margin-bottom: 56px;
   }
 
   .main {
     padding: 0px 40px 40px 180px;
   }
 
-  .main, .header, .footer {
+  .main, .header, .footer-inner {
+    width: 100%;
+    box-sizing: border-box;
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -117,6 +129,13 @@ h1 {
 .fade-enter,
 .fade-leave-active {
   opacity: 0
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-enter-active,
+  .fade-leave-active {
+    transition-duration: 0s;
+  }
 }
 
 </style>

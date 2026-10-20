@@ -140,32 +140,36 @@
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="less">
+
+@import '../css/variables.less';
+
 h2 {
-  font-weight: 100;
-  font-size: 2em;
+  font-size: 2.2em;
+  line-height: 1.1;
   margin: 0px;
   padding: 0px;
-  padding-top: 50px;
+  padding-top: 56px;
 }
 h3 {
-  font-weight: 100;
-  font-size: 1.6em;
+  font-size: 1.5em;
+  line-height: 1.2;
   margin: 0px;
   padding: 0px;
-  padding-top: 30px;
+  padding-top: 28px;
 }
 h4 {
-  font-weight: 100;
-  font-size: 1.3em;
+  font-family: @bodyFont;
+  font-weight: 400;
+  font-size: 1em;
+  color: @mutedTextColor;
   margin: 0px;
   padding: 0px;
-  padding-top: 15px;
-  font-style: italic;
+  padding-top: 4px;
 }
 
 .paragraph {
-  max-width: 700px;
+  max-width: 68ch;
 }
 
 .download-link {
@@ -174,15 +178,15 @@ h4 {
 }
 
 .full-content div, .full-content ul {
-  max-width: 800px;
+  max-width: 68ch;
 }
 
 .skill-set h3 {
-  padding-bottom: 10px;
+  padding-bottom: 8px;
 }
 
 .tech-stack {
-  font-style: italic;
+  color: @mutedTextColor;
 }
 
 @media only screen and (min-width: 620px){

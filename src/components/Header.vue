@@ -35,17 +35,28 @@ export default Vue.extend({
 }
 
 a {
-  text-transform: uppercase;
+  font-family: @headingFont;
+  font-weight: 500;
+  font-size: 1.2em;
+  letter-spacing: 0.02em;
+  color: @textColor;
+  text-decoration: none;
   margin-left: 15px;
   margin-right: 15px;
-  padding-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 3px solid transparent;
+  line-height: 1.4;
   white-space: nowrap;
   display: inline-block;
 }
 
-.router-link-exact-active {
-  border: 0px solid @textColor;
-  border-bottom-width: 2px;
+a:hover {
+  border-bottom-color: @mutedTextColor;
+}
+
+.router-link-exact-active,
+.router-link-exact-active:hover {
+  border-bottom-color: @accentColor;
 }
 
 @media only screen and (max-width: 620px){
@@ -53,10 +64,14 @@ a {
     line-height: 2em;
   }
 
+  .nav-bar {
+    text-align: left;
+    padding: 16px 16px 8px;
+  }
+
   a {
-    margin-left: 9px;
-    margin-right: 9px;
-    padding-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 16px;
   }
 }
 

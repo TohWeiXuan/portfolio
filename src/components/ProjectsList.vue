@@ -5,6 +5,9 @@
           <div
             :key="project.id"
               @click="showDetails(project)"
+              @keydown.enter="showDetails(project)"
+              tabindex="0"
+              role="button"
               class="project-item"
               :class="{ 'wide': project.isWide, 'high': project.isHigh }">
             <div class="project-item-image" :style="{ 'background-image': 'url(' + project.iconUrl + ')' }">
@@ -64,7 +67,9 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped>
+<style scoped lang="less">
+
+@import '../css/variables.less';
 
 .project-item {
   height: 300px;
@@ -97,10 +102,20 @@ filter: brightness(120%);
   bottom: 0px;
   width: 100%;
   background-color: #222222;
+  color: white;
 }
 
 .title-text {
-  padding: 10px;
+  font-family: @headingFont;
+  font-weight: 600;
+  font-size: 1.35em;
+  line-height: 1.2;
+  padding: 10px 14px;
+}
+
+.project-item:focus-visible {
+  outline: 3px solid @linkColor;
+  outline-offset: 3px;
 }
 
 @media only screen and (min-width: 620px){

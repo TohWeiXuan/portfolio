@@ -1,8 +1,9 @@
 <template>
   <div class="footer">
-    
-    <div class="left"><a href="https://github.com/schouffy/gamedev-portfolio" target="blank">Portfolio</a> by schouffy</div>
-    <div class="right">Reach me at <a href="mailto:2401687@sit.singaporetech.edu.sg">2401687@sit.singaporetech.edu.sg</a> or <router-link to="/contact">through here</router-link></div>
+    <div class="footer-inner">
+      <div class="left"><a href="https://github.com/schouffy/gamedev-portfolio" target="blank">Portfolio</a> by schouffy</div>
+      <div class="right">Reach me at <a href="mailto:2401687@sit.singaporetech.edu.sg">2401687@sit.singaporetech.edu.sg</a> or <router-link to="/contact">through here</router-link></div>
+    </div>
   </div>
 </template>
 
@@ -20,10 +21,15 @@ export default Vue.extend({
 
 .footer {
   background-color: @bodyBgColor;
+  color: @mutedTextColor;
   width: 100%;
-  font-size: 0.8em;
-  opacity: 0.7;
+  font-size: 0.85em;
+  margin-top: auto;
+}
+
+.footer-inner {
   padding-bottom: 30px;
+  display: flow-root;
 }
 
 .left, .right {
@@ -33,7 +39,7 @@ export default Vue.extend({
 
 @media only screen and (min-width: 620px){
 
-  .footer {
+  .footer-inner {
     padding: 0;
   }
 

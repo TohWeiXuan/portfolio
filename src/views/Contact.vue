@@ -1,9 +1,9 @@
 <template>
   <div>
 
-    <h1>Let's get in touch</h1>
+    <h1>Get in touch</h1>
 
-    <div style="margin-bottom:40px;">I'm open to opportunities in game and software development.<br/>Feel free to contact me about a role, a project, or just to talk about games and engines.</div>
+    <div class="intro">I'm open to software engineering opportunities. Email me about a role or a project, or to ask how something I built works.</div>
 
     <ul>
       <li>
@@ -23,7 +23,19 @@
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="less">
+
+@import '../css/variables.less';
+
+.intro {
+  max-width: 68ch;
+  margin-bottom: 40px;
+}
+
+i {
+  color: @mutedTextColor;
+}
+
 ul {
   list-style: none;
   padding-inline-start: 0px;
@@ -36,7 +48,7 @@ li {
 
 @media only screen and (min-width: 620px){
   ul {
-    padding-inline-start: 40px;
+    padding-inline-start: 0px;
   }
 
   li {

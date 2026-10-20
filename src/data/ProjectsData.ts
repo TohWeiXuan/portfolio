@@ -32,7 +32,7 @@ export default [
 
     <div class="paragraph">
         <div class="notice">
-        C++ · OpenGL · ECS · ImGui · RTTR · Lua (sol2) · FMOD · CMake · Team of 8 · Sep 2025 to Apr 2026
+        C++, OpenGL, ECS, ImGui, RTTR, Lua (sol2), FMOD, CMake. Team of 8, Sep 2025 to Apr 2026.
         </div>
     </div>
     `, "#2b2b2b", true),
@@ -63,7 +63,7 @@ export default [
 
     <div class="paragraph">
         <div class="notice">
-        C++ · Alpha Engine · Cellular automata · Team of 5 · Jan to Mar 2025
+        C++, Alpha Engine, cellular automata. Team of 5, Jan to Mar 2025.
         </div>
     </div>
     `, "#b5332a", false, true),
@@ -95,7 +95,7 @@ export default [
 
     <div class="paragraph">
         <div class="notice">
-        C · CProcessing · Team of 5 · Sep to Nov 2024
+        C, CProcessing. Team of 5, Sep to Nov 2024.
         </div>
     </div>
     `, "#c0392b", false, true)

@@ -5,11 +5,11 @@
       </div>
       <div class="dialog" :style="{ 'background-color': color }">
         <h1 class="dialog-title">{{ title }}</h1>
-        <div @click="$emit('close')" class="dialog-close"><i class="fa fa-times fa-lg fa-fw"></i></div>
+        <button type="button" @click="$emit('close')" class="dialog-close" aria-label="Close"><i class="fa fa-times fa-lg fa-fw"></i></button>
         <div class="dialog-content">
           <div v-html="htmlContent"></div>
           <div class="dialog-bottom">
-          <a @click="$emit('close')" class="dialog-close-button">Close</a>
+          <button type="button" @click="$emit('close')" class="dialog-close-button">Close</button>
         </div>
         </div>
       </div>
@@ -36,9 +36,12 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped>
+<style scoped lang="less">
+
+@import '../css/variables.less';
+
 .overlay {
-  background-color: rgba(0,0,0,0.5);
+  background-color: fade(@textColor, 60%);
   z-index: 10;
   position:fixed;
   top:0px;
@@ -54,7 +57,6 @@ export default Vue.extend({
   right: 0px;
   z-index: 11;
   margin: 20px;
-  padding-bottom: 10px;
   color:white;
 }
 
@@ -63,41 +65,58 @@ iframe {
 }
 
 h1.dialog-title {
-    text-align: center;
-    font-size: 1.3em;
+    font-size: 1.8em;
+    line-height: 1.1;
     margin: 0px;
-    padding: 22px;
+    padding: 20px 64px 20px 20px;
 }
 
 .dialog-content {
   padding: 20px;
+  background-color: @contentBgColor;
+  color: @textColor;
+  border-bottom: 4px solid @accentColor;
 }
 
-.dialog-content {
-  background-color: #fcfcfc;
-  color: #696969;
+button {
+  font: inherit;
+  cursor: pointer;
 }
+
 .dialog-close {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  cursor:pointer;
-  font-size: 1.2em;
-  font-weight: 100;
+  top: 16px;
+  right: 16px;
+  padding: 8px;
+  background: none;
+  border: none;
+  color: white;
 }
 .dialog-close:hover {
-  opacity: 0.6;
+  opacity: 0.7;
+}
+.dialog-close:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
 }
 
 .dialog-bottom {
   text-align: center;
 }
 
-a.dialog-close-button {
-  cursor:pointer;
-  font-size: 1.4em;
-  display: inline-block;
+.dialog-close-button {
+  font-family: @headingFont;
+  font-weight: 600;
+  font-size: 1.2em;
+  color: @textColor;
+  background: none;
+  border: 2px solid @textColor;
+  padding: 6px 28px;
   margin: 0 auto;
+}
+.dialog-close-button:hover {
+  background-color: @textColor;
+  color: @contentBgColor;
 }
 
 @media only screen and (min-width: 620px){
@@ -109,7 +128,8 @@ a.dialog-close-button {
   }
 
   h1.dialog-title {
-    font-size: 1.6em;
+    font-size: 2.4em;
+    padding: 24px 72px 24px 40px;
   }
 
   .dialog-content {
