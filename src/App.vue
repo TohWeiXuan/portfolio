@@ -85,7 +85,7 @@ a:focus-visible, button:focus-visible {
 
 ::selection {
   background-color: @accentColor;
-  color: @textColor;
+  color: @bodyBgColor;
 }
 
 h1 {

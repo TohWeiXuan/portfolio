@@ -41,7 +41,7 @@ export default Vue.extend({
 @import '../css/variables.less';
 
 .overlay {
-  background-color: fade(@textColor, 60%);
+  background-color: fade(@bodyBgColor, 85%);
   z-index: 10;
   position:fixed;
   top:0px;
