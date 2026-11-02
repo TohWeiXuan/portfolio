@@ -25,20 +25,20 @@ BROWSERS = [
 CSS = """
 @page { size: A4; margin: 10mm 15mm; }
 * { box-sizing: border-box; }
-body { font-family: Arial, Helvetica, sans-serif; font-size: 9pt; line-height: 1.28; color: #1a1a1a; margin: 0; }
+body { font-family: Arial, Helvetica, sans-serif; font-size: 10pt; line-height: 1.28; color: #1a1a1a; margin: 0; }
 a { color: inherit; text-decoration: none; }
 h1 { font-size: 24pt; font-weight: 400; margin: 0 0 2pt; letter-spacing: -0.2pt; }
-.subtitle { color: #555; font-size: 10.5pt; margin: 0 0 3pt; }
-.contact { font-size: 9pt; margin: 0 0 4pt; }
-h2 { font-size: 8.5pt; font-weight: 700; letter-spacing: 2.2pt; text-transform: uppercase;
+.subtitle { color: #555; font-size: 11pt; margin: 0 0 3pt; }
+.contact { font-size: 10pt; margin: 0 0 4pt; }
+h2 { font-size: 10pt; font-weight: 700; letter-spacing: 2pt; text-transform: uppercase;
      border-bottom: 1.2pt solid #1a1a1a; padding-bottom: 2.5pt; margin: 9pt 0 4pt; }
-h3 { font-size: 10.5pt; margin: 5pt 0 0; display: flex; justify-content: space-between; align-items: baseline; }
-h3 .when { font-weight: 400; font-size: 9pt; color: #555; white-space: nowrap; padding-left: 12pt; }
+h3 { font-size: 11.5pt; margin: 5pt 0 0; display: flex; justify-content: space-between; align-items: baseline; }
+h3 .when { font-weight: 400; font-size: 10pt; color: #555; white-space: nowrap; padding-left: 12pt; }
 .org { font-style: italic; color: #555; margin: 1pt 0 2pt; }
 p { margin: 0 0 3pt; }
 ul { margin: 2pt 0 0; padding-left: 14pt; }
 li { margin: 0 0 1pt; }
-li::marker { content: "\\25B8  "; font-size: 8pt; }
+li::marker { content: "\\25B8  "; font-size: 9pt; }
 h2, h3 { break-after: avoid; }
 li { break-inside: avoid; }
 """

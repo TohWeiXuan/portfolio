@@ -3,11 +3,11 @@
     <h1>Resume</h1>
 
     <div class="paragraph">
-      I'm <strong>Toh Wei Xuan</strong>, a Computer Science student specializing in Real-Time Interactive Simulation, with experience in C++ game development, gameplay systems, AI behaviour and real-time simulation.
+      I'm <strong>Toh Wei Xuan</strong>, a C++ software engineer who designs the core systems a whole team builds on, pairing a Computer Science degree in Real-Time Interactive Simulation with four years of high-reliability engineering.
       <br />
-      <br />Before university, I was an Air Force Engineer for four years in a high-reliability engineering environment, where I worked on troubleshooting, quality control, process improvement and team leadership.
+      <br />As Engine Champion on an 8-person team, I designed the Entity Component System, event system, scene serialization and editor undo/redo that our game shipped on. As an Air Force Engineer, I kept fighter aircraft serviceable through systematic troubleshooting, quality control and team leadership.
       <br />
-      <br />I bring strong problem-solving and technical skills, and experience working collaboratively on software projects. If you have an opportunity in mind, feel free to
+      <br />If you have an opportunity in mind, feel free to
       <router-link to="/contact">contact me</router-link>.
 
       <div style="margin-top:20px; margin-bottom:20px;">
@@ -25,11 +25,11 @@
       <h4>GAM 200/250, team of 8, Sep 2025 - Apr 2026</h4>
 
       <ul>
-        <li>Designed and refactored the engine's core Entity Component System (ECS), engine loop, window manager and event manager in C++.</li>
-        <li>Built enemy AI using A* pathfinding on the tilemap with context steering for local obstacle avoidance, plus line-of-sight detection and patrol, look-around, chase and return states.</li>
-        <li>Implemented scene serialization, a prefab system with hot-reload, a tilemap editor and generic RTTR-based undo/redo in the ImGui level editor.</li>
-        <li>Developed a particle system (continuous, burst and trail emitters) and an MPEG video player with audio synced through FMOD for cutscenes.</li>
-        <li>Integrated Lua scripting via sol2, and built the game's scene flow with controller support, fullscreen toggle and pause on focus loss.</li>
+        <li>Owned the engine core for an 8-person team building a game from scratch on a custom C++ engine. Designed and refactored the Entity Component System, engine loop, window manager and event manager so that gameplay and editor code shared one event-driven architecture.</li>
+        <li>Built roomba AI that navigates a tile-based house, combining A* pathfinding for routes with context steering over 8 directions (interest/danger maps) for smooth obstacle avoidance. Line-of-sight detection drives 4 behaviour states: patrol, look-around, chase and return.</li>
+        <li>Made editor undo/redo work for any component without per-component code by using RTTR reflection to snapshot components as JSON. Also shipped full scene and runtime-state serialization, hot-reloading prefabs and a tilemap editor in the ImGui level editor.</li>
+        <li>Built a particle system with 3 emitter types (continuous, burst, distance-based trail) for the dust explosion and trail effects. Also added an MPEG video player (pl_mpeg) with audio kept in sync through FMOD for the game's 2 cutscenes.</li>
+        <li>Integrated Lua via sol2 so player movement and the pause menu are scripted outside C++. Built a 7-scene game flow (splash, main menu, level select, pause, cutscene, win, death) with controller support, fullscreen toggle and pause on focus loss.</li>
       </ul>
 
       <div class="tech-stack">C++, OpenGL, ECS, ImGui, RTTR, Lua (sol2), FMOD, CMake</div>
@@ -38,9 +38,9 @@
       <h4>CSD1451, team of 5, Jan - Mar 2025</h4>
 
       <ul>
-        <li>Implemented player mining on a pixel-based cellular simulation, with line-traced cell selection, a highlighting smart cursor and an upgradable mining area.</li>
-        <li>Built the inventory system, inventory scene and shop scene for selling ores and buying upgrades (mining size, jetpack, heat armor, full heal).</li>
-        <li>Designed depth-scaled heat damage absorbed by heat armor, with an armor bar and a depth indicator in the UI.</li>
+        <li>On a 5-person C++ team, owned player mining on a pixel-based cellular simulation. Line-traced cell selection and a highlighting smart cursor let players dig the exact cells they aim at, and the mining area scales with upgrades.</li>
+        <li>Built the inventory system, inventory scene and shop scene that close the dig &rarr; sell &rarr; upgrade loop, with 4 purchasable upgrades (larger mining size, jetpack, heat armor, full heal).</li>
+        <li>Designed heat damage that scales with depth so that digging deeper carries more risk. Heat armor absorbs it, and 2 UI readouts (armor bar, depth indicator) show it.</li>
       </ul>
 
       <div class="tech-stack">C++, Alpha Engine, cellular automata</div>
@@ -49,26 +49,12 @@
       <h4>CSD1401, team of 5, Sep - Nov 2024</h4>
 
       <ul>
-        <li>Led development of the weapon system in C, covering the portal gun, pistol, grenade launcher and disk launcher.</li>
-        <li>Implemented portal shooting and player teleportation that carries angle and velocity through the exit portal, with a teleport cooldown.</li>
-        <li>Built projectile behaviours including gravity-affected bouncing grenades, disks that split in two after passing through a portal, and area-damage explosions.</li>
-        <li>Managed projectile lifetimes through a shared entity array, and implemented weapon switching and weapon sprite rendering in the game scene.</li>
+        <li>Main author of the weapon system for a 5-person team in plain C. Shipped 4 weapons (portal gun, pistol, grenade launcher, disk launcher) with weapon switching and sprite rendering, and managed projectile lifetimes through a shared entity array.</li>
+        <li>Implemented teleportation between 2 linked portals that keeps the player's angle and velocity through the exit portal, with a cooldown to prevent instant re-teleports.</li>
+        <li>Made projectiles portal-aware: gravity-affected grenades bounce off tiles and explode on a timer, disks split into 2 after teleporting (with a speed cap), and explosions deal area damage.</li>
       </ul>
 
       <div class="tech-stack">C, CProcessing</div>
-
-      <h2>Work experience</h2>
-
-      <h3>Air Force Engineer - Republic of Singapore Air Force (RSAF)</h3>
-      <h4>August 2019 - August 2023, Singapore</h4>
-
-      <ul>
-        <li>Maintained the serviceability of fighter aircraft within a high-reliability engineering environment.</li>
-        <li>Applied systematic troubleshooting and problem-solving to aircraft maintenance activities.</li>
-        <li>Implemented new procedures and technologies that improved efficiency and streamlined operations.</li>
-        <li>Led a team to achieve expected maintenance goals while reducing human-factor errors.</li>
-        <li>Applied quality control, technical procedures and effective team communication to maintain operational standards.</li>
-      </ul>
 
       <h2>Skills</h2>
 
@@ -123,6 +109,17 @@
         <div>Technical Reporting</div>
       </div>
       <div style="clear:both" />
+
+      <h2>Work experience</h2>
+
+      <h3>Air Force Engineer - Republic of Singapore Air Force (RSAF)</h3>
+      <h4>August 2019 - August 2023, Singapore</h4>
+
+      <ul>
+        <li>Over 4 years, maintained fighter-aircraft serviceability in a high-reliability environment, tracing faults with systematic troubleshooting and closing them to technical procedure.</li>
+        <li>Led a maintenance team to meet maintenance goals while reducing human-factor errors through quality control and clear team communication.</li>
+        <li>Introduced new procedures and technologies that improved efficiency and streamlined operations.</li>
+      </ul>
 
       <h2>Education</h2>
 
