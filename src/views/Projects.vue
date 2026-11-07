@@ -7,10 +7,6 @@
     </div>
 
     <ProjectsList v-bind:projects="projects" />
-
-    <div style="margin-top: 20px;">
-      There's more on my <a target="_blank" href="https://github.com/TohWeiXuan">GitHub</a>.
-    </div>
   </div>
 </template>
 

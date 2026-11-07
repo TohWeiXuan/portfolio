@@ -11,10 +11,6 @@
         <a href="mailto:toh.weixuan@gmail.com" target="_blank">toh.weixuan@gmail.com</a>
       </li>
       <li>
-        <i class="fa fa-github fa-lg fa-fw"></i>
-        <a href="https://github.com/TohWeiXuan" target="_blank">github.com/TohWeiXuan</a>
-      </li>
-      <li>
         <i class="fa fa-map-marker fa-lg fa-fw"></i>
         Singapore
       </li>
