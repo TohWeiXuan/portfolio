@@ -12,6 +12,7 @@
 
       <div style="margin-top:20px; margin-bottom:20px;">
         <a class="download-link" href="d/Resume-TohWeiXuan.pdf" target="_blank"><i class="fa fa-download fa-lg fa-fw"></i> Download as PDF</a>
+        <a class="download-link" href="https://www.linkedin.com/in/wei-xuan-toh-091173436" target="_blank"><i class="fa fa-linkedin fa-lg fa-fw"></i> View on LinkedIn</a>
         <div style="clear:both"></div>
       </div>
     </div>

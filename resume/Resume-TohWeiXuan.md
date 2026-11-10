@@ -3,7 +3,7 @@
 Computer Science (Real-Time Interactive Simulation) student · Former Air Force Engineer
 {.subtitle}
 
-toh.weixuan@gmail.com · +65 82995285 · Singapore · [github.com/TohWeiXuan](https://github.com/TohWeiXuan) · [tohweixuan.github.io/portfolio](https://tohweixuan.github.io/portfolio/)
+toh.weixuan@gmail.com · +65 82995285 · Singapore<br>[linkedin.com/in/wei-xuan-toh-091173436](https://www.linkedin.com/in/wei-xuan-toh-091173436) · [github.com/TohWeiXuan](https://github.com/TohWeiXuan) · [tohweixuan.github.io/portfolio](https://tohweixuan.github.io/portfolio/)
 {.contact}
 
 ## Profile

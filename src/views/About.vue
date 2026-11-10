@@ -21,6 +21,7 @@
 
       <div style="margin-top: 40px;">
         I'm open to software engineering opportunities. Email me at <a href="mailto:toh.weixuan@gmail.com">toh.weixuan@gmail.com</a>,
+        connect with me on <a href="https://www.linkedin.com/in/wei-xuan-toh-091173436" target="_blank">LinkedIn</a>,
         or read my <router-link to="/resume">resume</router-link> first.
       </div>
     </div>

@@ -11,6 +11,10 @@
         <a href="mailto:toh.weixuan@gmail.com" target="_blank">toh.weixuan@gmail.com</a>
       </li>
       <li>
+        <i class="fa fa-linkedin fa-lg fa-fw"></i>
+        <a href="https://www.linkedin.com/in/wei-xuan-toh-091173436" target="_blank">linkedin.com/in/wei-xuan-toh-091173436</a>
+      </li>
+      <li>
         <i class="fa fa-github fa-lg fa-fw"></i>
         <a href="https://github.com/TohWeiXuan" target="_blank">github.com/TohWeiXuan</a>
       </li>
