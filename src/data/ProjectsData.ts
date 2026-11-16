@@ -23,6 +23,7 @@ export default [
     <div class="paragraph">
         <div class="notice">
         Unreal Engine 5, C++, Mass Entity, SQLite, OpenStreetMap. Team of 7, Sep 2026 to present.
+        Map data &copy; OpenStreetMap contributors.
         </div>
     </div>
     `, "#1f4e79", true, true),
