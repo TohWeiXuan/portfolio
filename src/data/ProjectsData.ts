@@ -1,6 +1,31 @@
 import ProjectData from '@/data/ProjectData.ts'
 
 export default [
+    new ProjectData("crowdcrush", "CROWDCRUSH", "img/projects/crowdcrush.jpg",
+    `
+    <div class="paragraph">
+        <strong>CROWDCRUSH</strong> is a real-time crowd-control and pedestrian-flow simulator for MRT stations,
+        built in Unreal Engine 5 by a 7-person team (6 programmers and 1 UX designer) for GAM 300.
+        You edit a station layout while the simulation runs and watch the crowd re-flow, with live congestion heatmaps.
+        Agents run on UE5's Mass Entity framework so the simulation can scale to large crowds.
+    </div>
+
+    <div class="paragraph">
+        I'm a <strong>Simulation Programmer</strong> on the team. What I've built so far:
+        <ul>
+        <li><strong>Throughput trigger</strong>: a one-way counting plane you can place, rotate and scale anywhere in a station. It counts agents walking through it in one direction and reports a flow rate in people per minute over a rolling window. Mass agents have no collision, so a Mass processor gives agents near a plane pooled proxy spheres that follow them, which lets the plane get real overlap events without touching the navmesh</li>
+        <li><strong>OpenStreetMap station map</strong>: ported a SQLite R-tree map viewer into the project to draw real streets, extruded buildings and points of interest around the station. It only re-queries the database when the camera leaves the cached area, and road detail drops with camera height</li>
+        <li><strong>Station markers</strong>: clickable markers that highlight a station's real building footprint and open that station's crowd simulation, with a top-down pan and zoom camera</li>
+        <li><strong>Menu integration</strong>: a Station Map tab on the start menu and a Back to Map flow (File menu or M key) with an unsaved-changes prompt. The station list is set in project settings and ships in the packaged build</li>
+        </ul>
+    </div>
+
+    <div class="paragraph">
+        <div class="notice">
+        Unreal Engine 5, C++, Mass Entity, SQLite, OpenStreetMap. Team of 7, Sep 2026 to present.
+        </div>
+    </div>
+    `, "#1f4e79", true, true),
     new ProjectData("soot-and-scoot", "Soot & Scoot", "img/projects/soot-and-scoot.jpg",
     `
     <div class="paragraph">
@@ -98,5 +123,5 @@ export default [
         C, CProcessing. Team of 5, Sep to Nov 2024.
         </div>
     </div>
-    `, "#c0392b", false, true)
+    `, "#c0392b")
 ];

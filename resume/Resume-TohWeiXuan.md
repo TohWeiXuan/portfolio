@@ -12,9 +12,18 @@ C++ software engineer who designs the core systems a whole team builds on, pairi
 
 ## Projects
 
+### CROWDCRUSH — Simulation Programmer <span class="when">Sep 2026 – Present</span>
+
+SIT team project · Team of 7 · Unreal Engine 5, C++, Mass Entity, SQLite, OpenStreetMap
+{.org}
+
+- Built a one-way throughput trigger for a real-time MRT-station crowd simulator, counting pedestrian agents crossing a placeable plane and reporting flow rate (people/min). A Mass processor gives nearby agents pooled proxy spheres so collision-free agents still raise overlap events.
+- Integrated an OpenStreetMap station map into the app: ported a SQLite R-tree map viewer rendering real streets and extruded buildings with camera-height LOD, and built clickable station markers that open each station's crowd simulation.
+- Added a Station Map tab to the start menu, a top-down pan/zoom map camera, and a Back to Map flow with an unsaved-changes prompt. The station list is configured in project settings and ships in the packaged build.
+
 ### Soot & Scoot — Engine Champion <span class="when">Sep 2025 – Apr 2026</span>
 
-GAM 200/250 · Team of 8 · C++, OpenGL, ECS, ImGui, RTTR, Lua (sol2), FMOD, CMake
+SIT team project · Team of 8 · C++, OpenGL, ECS, ImGui, RTTR, Lua (sol2), FMOD, CMake
 {.org}
 
 - Owned the engine core for an 8-person team building a game from scratch on a custom C++ engine. Designed and refactored the Entity Component System, engine loop, window manager and event manager so that gameplay and editor code shared one event-driven architecture.
@@ -23,18 +32,18 @@ GAM 200/250 · Team of 8 · C++, OpenGL, ECS, ImGui, RTTR, Lua (sol2), FMOD, CMa
 - Built a particle system with 3 emitter types (continuous, burst, distance-based trail) for the dust explosion and trail effects. Also added an MPEG video player (pl_mpeg) with audio kept in sync through FMOD for the game's 2 cutscenes.
 - Integrated Lua via sol2 so player movement and the pause menu are scripted outside C++. Built a 7-scene game flow (splash, main menu, level select, pause, cutscene, win, death) with controller support, fullscreen toggle and pause on focus loss.
 
-### Dwarf Mayhem: Into the Depths — Gameplay Programmer <span class="when">Jan – Mar 2025</span>
+### Dwarf Mayhem: Into the Depths — Gameplay Programmer <span class="when">Jan 2025 – Mar 2025</span>
 
-CSD1451 · Team of 5 · C++, Alpha Engine, cellular automata
+SIT team project · Team of 5 · C++, Alpha Engine, cellular automata
 {.org}
 
 - On a 5-person C++ team, owned player mining on a pixel-based cellular simulation. Line-traced cell selection and a highlighting smart cursor let players dig the exact cells they aim at, and the mining area scales with upgrades.
 - Built the inventory system, inventory scene and shop scene that close the dig → sell → upgrade loop, with 4 purchasable upgrades (larger mining size, jetpack, heat armor, full heal).
 - Designed heat damage that scales with depth so that digging deeper carries more risk. Heat armor absorbs it, and 2 UI readouts (armor bar, depth indicator) show it.
 
-### Portal Mayhem — Weapons Programmer <span class="when">Sep – Nov 2024</span>
+### Portal Mayhem — Weapons Programmer <span class="when">Sep 2024 – Nov 2024</span>
 
-CSD1401 · Team of 5 · C, CProcessing
+SIT team project · Team of 5 · C, CProcessing
 {.org}
 
 - Main author of the weapon system for a 5-person team in plain C. Shipped 4 weapons (portal gun, pistol, grenade launcher, disk launcher) with weapon switching and sprite rendering, and managed projectile lifetimes through a shared entity array.
@@ -44,14 +53,13 @@ CSD1401 · Team of 5 · C, CProcessing
 ## Technical Skills
 
 - **Languages:** C++, C, Lua
-- **Libraries & Engines:** OpenGL, ImGui, RTTR, sol2, FMOD
+- **Libraries & Engines:** Unreal Engine 5, Mass Entity, SQLite, OpenGL, ImGui, RTTR, sol2, FMOD
 - **Engineering:** Object-Oriented Programming, ECS Architecture, Event-Driven Design, Serialization, Debugging
 - **Tools:** Git, CMake, Visual Studio
-- **Spoken:** English (Fluent), Chinese (Native)
 
 ## Experience
 
-### Air Force Engineer <span class="when">August 2019 – August 2023</span>
+### Air Force Engineer <span class="when">Aug 2019 – Aug 2023</span>
 
 Republic of Singapore Air Force (RSAF) · Singapore
 {.org}
@@ -62,7 +70,11 @@ Republic of Singapore Air Force (RSAF) · Singapore
 
 ## Education
 
-### Singapore Institute of Technology <span class="when">September 2024 – Present</span>
+### Singapore Institute of Technology <span class="when">Sep 2024 – Aug 2028 (expected)</span>
 
-Computer Science in Real-Time Interactive Simulation
+Bachelor of Science (Honours) in Computer Science in Real-Time Interactive Simulation
 {.org}
+
+## Languages
+
+English (Fluent), Chinese (Native)
