@@ -4,20 +4,47 @@ export default [
     new ProjectData("crowdcrush", "CROWDCRUSH", "img/projects/crowdcrush.jpg",
     `
     <div class="paragraph">
-        <strong>CROWDCRUSH</strong> is a real-time crowd-control and pedestrian-flow simulator for MRT stations,
+        <strong>CROWDCRUSH</strong> is a real-time crowd-control and pedestrian-flow simulator for Mass Rapid Transit (MRT) stations,
         built in Unreal Engine 5 by a 7-person team (6 programmers and 1 UX designer) for GAM 300.
         You edit a station layout while the simulation runs and watch the crowd re-flow, with live congestion heatmaps.
         Agents run on UE5's Mass Entity framework so the simulation can scale to large crowds.
+        I'm a <strong>Simulation Programmer</strong> on the team.
     </div>
 
     <div class="paragraph">
-        I'm a <strong>Simulation Programmer</strong> on the team. What I've built so far:
+        <strong>The problem.</strong> A crowd simulator is only useful if you can measure it. We needed to count how many people
+        pass any point in a station, in one direction, while the layout is being edited live, and to show each simulation
+        in the context of the real station and its streets.
+    </div>
+
+    <div class="paragraph">
+        <strong>The constraint.</strong> Mass Entity agents have no collision, so Unreal's normal trigger volumes never see them.
+        Counting had to work without changing how the agents navigate.
+    </div>
+
+    <div class="paragraph">
+        <strong>What I built.</strong>
         <ul>
-        <li><strong>Throughput trigger</strong>: a one-way counting plane you can place, rotate and scale anywhere in a station. It counts agents walking through it in one direction and reports a flow rate in people per minute over a rolling window. Mass agents have no collision, so a Mass processor gives agents near a plane pooled proxy spheres that follow them, which lets the plane get real overlap events without touching the navmesh</li>
-        <li><strong>OpenStreetMap station map</strong>: ported a SQLite R-tree map viewer into the project to draw real streets, extruded buildings and points of interest around the station. It only re-queries the database when the camera leaves the cached area, and road detail drops with camera height</li>
-        <li><strong>Station markers</strong>: clickable markers that highlight a station's real building footprint and open that station's crowd simulation, with a top-down pan and zoom camera</li>
-        <li><strong>Menu integration</strong>: a Station Map tab on the start menu and a Back to Map flow (File menu or M key) with an unsaved-changes prompt. The station list is set in project settings and ships in the packaged build</li>
+        <li><strong>Throughput trigger</strong>: a one-way counting plane you can place, rotate and scale anywhere in a station. A Mass processor gives only the agents near a plane pooled proxy spheres that follow them, so the plane gets real overlap events without touching the navmesh or adding collision to every agent. It reports flow in people per minute over a rolling window</li>
+        <li><strong>All-Singapore station map</strong>: real streets, extruded buildings and points of interest from OpenStreetMap, covering the whole island. The map loads in tiles on background threads from an index database plus 8 region SQLite databases (about 210 MB), only re-queries when the camera leaves the cached area, and drops road detail with camera height</li>
+        <li><strong>Station markers</strong>: all 238 stations get a marker automatically. A marker turns clickable once a station layout is set for it, highlights the station's real building footprint and opens that station's crowd simulation, with a top-down pan and zoom camera</li>
+        <li><strong>Menu integration</strong>: a Station Map tab on the start menu and a Back to Map flow (File menu or M key) with an unsaved-changes prompt</li>
         </ul>
+    </div>
+
+    <div class="paragraph">
+        <strong>What failed, and what I changed.</strong> The counter took 5 versions in 4 days:
+        <ul>
+        <li>A fare-gantry actor with lane dividers. Its dividers blocked navigation and cut one-way lanes out of the navmesh, so the counter changed how the crowd walked</li>
+        <li>A counting plane, then a tripwire Mass processor, that checked every agent's movement against every plane each frame. That no longer touched navigation, but its cost grew with every agent and every plane</li>
+        <li>For performance, the final trigger gives pooled proxy spheres only to agents near a plane, and the plane itself never ticks: crossings are counted only when they happen. The last change made it one-way, so both directions of an opening are counted with two planes</li>
+        </ul>
+    </div>
+
+    <div class="paragraph">
+        <strong>Result.</strong> Measured in the editor over Punggol and Sengkang at 800 m, the map draws 30,800 road segments
+        and 2,100 buildings at 23.2 ms a frame, against 20.0 ms with the map hidden: about 3 ms for the whole map. Tiles load in
+        52 ms on average. I also wrote automated tests for the map's geographic projection and database coverage.
     </div>
 
     <div class="paragraph">
@@ -43,17 +70,45 @@ export default [
     </div>
 
     <div class="paragraph">
-        I was the team's <strong>Engine Champion</strong> and its most active contributor. What I built:
+        <strong>The problem.</strong> I was the team's <strong>Engine Champion</strong> and its most active contributor.
+        Eight people were building a game and its level editor at the same time on an engine that didn't exist yet,
+        so every gameplay and editor feature depended on the core I owned.
+    </div>
+
+    <div class="paragraph">
+        <strong>The constraint.</strong> No third-party engine: the game and the editor had to share one C++ codebase,
+        and the editor had to support any component the team added without me writing code for each one.
+    </div>
+
+    <div class="paragraph">
+        <strong>The choices I made.</strong>
         <ul>
-        <li><strong>Entity Component System</strong>: designed and refactored the engine's core ECS, along with the engine loop, window manager and an event manager for gameplay and editor events</li>
-        <li><strong>Enemy AI</strong>: A* pathfinding on the tilemap grid, combined with context steering (interest/danger maps over 8 directions) for smooth local obstacle avoidance, plus line-of-sight detection and the roomba's patrol, look-around, chase and return states</li>
+        <li><strong>Entity Component System (ECS)</strong>: designed and refactored the engine's core ECS, along with the engine loop, window manager and an event manager, so gameplay and editor code share one event-driven architecture. I also kept the CMake build working, with 34 of its 50 changes</li>
+        <li><strong>Editor undo/redo</strong>: instead of undo logic per component, one generic command snapshots a component as JSON through RTTR reflection before and after an edit. All 25 component types in the editor get undo/redo from it, and any new component gets it with no extra code</li>
         <li><strong>Scene serialization and prefabs</strong>: full save/load of scenes and runtime state, a prefab system with hot-reload, and the tilemap editor</li>
-        <li><strong>Editor undo/redo</strong>: generic undo/redo for any component, using RTTR reflection to snapshot components as JSON</li>
+        <li><strong>Enemy AI</strong>: A* pathfinding on the 55&times;31 tilemap grid plans the route, and context steering (interest/danger maps over 8 directions) handles smooth local obstacle avoidance. Line-of-sight detection drives the roomba's patrol, look-around, chase and return states, for up to 11 roombas in a level</li>
+        </ul>
+    </div>
+
+    <div class="paragraph">
+        <strong>What failed, and what I changed.</strong> Roombas first found their way back to their patrol route by retracing a
+        breadcrumb trail, which made them slow down and stutter. I replaced it with A* pathfinding and removed the breadcrumbs
+        the same day. Then I put context steering back on top of A*, so roombas follow the planned path but still steer
+        smoothly round obstacles between waypoints, and fixed a chase-stuck bug the next day.
+    </div>
+
+    <div class="paragraph">
+        <strong>What else I shipped.</strong>
+        <ul>
         <li><strong>Particle system</strong>: continuous, burst and distance-based trail emitters, used for the dust explosion and trail effects</li>
         <li><strong>Video playback</strong>: an MPEG video player (pl_mpeg) with audio played through FMOD in sync, used for the intro and ending cutscenes</li>
         <li><strong>Lua scripting</strong>: integrated Lua via sol2 for player movement and the pause menu</li>
         <li><strong>Game flow</strong>: splash screen, main menu, pause, level select, cutscene, win and death scenes, with controller support, fullscreen toggle and pausing when the window loses focus</li>
         </ul>
+    </div>
+
+    <div class="paragraph">
+        <strong>Result.</strong> The game shipped with 5 levels on the engine. I was its top committer, with 472 of the team's 1,454 commits.
     </div>
 
     <div class="paragraph">
@@ -108,14 +163,23 @@ export default [
     </div>
 
     <div class="paragraph">
-        I was the main author of the weapon system. What I worked on:
+        <strong>The problem.</strong> I was the main author of the weapon system: 4 weapons whose projectiles all had to
+        work with portals, so a bullet, grenade or disk could leave one portal and keep flying out of the other.
+    </div>
+
+    <div class="paragraph">
+        <strong>The constraint.</strong> Plain C with no engine. CProcessing handles drawing and input, but there are no
+        classes, physics or entity system to lean on. Every projectile's lifetime, movement and collision had to be written by hand.
+    </div>
+
+    <div class="paragraph">
+        <strong>The choices I made.</strong>
         <ul>
-        <li><strong>Portal gun</strong>: shooting portals and teleporting the player between them, carrying the player's angle and velocity through the exit portal, with a teleport cooldown</li>
-        <li><strong>Pistol</strong>: fire-rate limited shooting with a capped bullet count</li>
+        <li><strong>One shared entity array</strong>: every projectile and explosion lives in the same array, so weapon switching, lifetimes and cleanup are handled in one place instead of per weapon</li>
+        <li><strong>Portal gun</strong>: teleporting carries the player's angle and velocity through the exit portal. Without a cooldown, a player leaving a portal would be teleported straight back, so teleports have one</li>
         <li><strong>Grenade launcher</strong>: gravity-affected grenades that bounce off tiles, travel through portals and explode when their timer runs out</li>
-        <li><strong>Disk launcher</strong>: disks that pass through portals and split into two smaller disks after teleporting, with a speed cap</li>
-        <li><strong>Explosions</strong>: short-lived explosion entities that deal area damage to nearby monsters</li>
-        <li><strong>Weapon handling</strong>: weapon switching, projectile lifetimes managed through a shared entity array, and weapon sprite rendering in the game scene</li>
+        <li><strong>Disk launcher</strong>: disks split into two smaller disks after teleporting, with a speed cap</li>
+        <li><strong>Pistol and explosions</strong>: fire-rate limited shooting with a capped bullet count, and short-lived explosion entities that deal area damage</li>
         </ul>
     </div>
 

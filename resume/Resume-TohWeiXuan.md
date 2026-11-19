@@ -6,9 +6,21 @@ Computer Science (Real-Time Interactive Simulation) student · Former Air Force 
 toh.weixuan@gmail.com · +65 82995285 · Singapore<br>[linkedin.com/in/wei-xuan-toh-091173436](https://www.linkedin.com/in/wei-xuan-toh-091173436) · [tohweixuan.github.io/portfolio](https://tohweixuan.github.io/portfolio/)
 {.contact}
 
-## Profile
+## Summary
 
-C++ software engineer who designs the core systems a whole team builds on, pairing a Computer Science degree in Real-Time Interactive Simulation with four years of high-reliability engineering. As Engine Champion on an 8-person team, I designed the Entity Component System, event system, scene serialization and editor undo/redo that our game shipped on. As an Air Force Engineer, I kept fighter aircraft serviceable through systematic troubleshooting, quality control and team leadership.
+Computer Science (Real-Time Interactive Simulation) undergraduate at Singapore Institute of Technology, graduating 2028, after four years as an Air Force engineer. I designed the Entity Component System and generic undo/redo for my team's custom C++ engine, and built an all-Singapore station map for a real-time MRT crowd simulator in Unreal Engine 5.
+
+<!-- Tailored copies: add "applying for the [ROLE] role at [COMPANY]" to the first sentence, using the posting's exact title. -->
+
+## Experience
+
+### Air Force Engineer (Electrical Instruments) <span class="when">Aug 2019 – Aug 2023</span>
+
+Republic of Singapore Air Force (RSAF) · Singapore
+{.org}
+
+- Helped build a wire-testing kit that cut an F-16 wiring check from 2–3 people and up to 3 hours to 1 person in about 1.5 hours.
+- Maintained electrical and instrument systems on F-16 fighter aircraft for 4 years, leading teams of 3–4 and closing faults to technical procedure with quality-control checks.
 
 ## Projects
 
@@ -17,56 +29,25 @@ C++ software engineer who designs the core systems a whole team builds on, pairi
 SIT team project · Team of 7 · Unreal Engine 5, C++, Mass Entity, SQLite, OpenStreetMap
 {.org}
 
-- Built a one-way throughput trigger for a real-time MRT-station crowd simulator, counting pedestrian agents crossing a placeable plane and reporting flow rate (people/min). A Mass processor gives nearby agents pooled proxy spheres so collision-free agents still raise overlap events.
-- Integrated an OpenStreetMap station map into the app: ported a SQLite R-tree map viewer rendering real streets and extruded buildings with camera-height LOD, and built clickable station markers that open each station's crowd simulation.
-- Added a Station Map tab to the start menu, a top-down pan/zoom map camera, and a Back to Map flow with an unsaved-changes prompt. The station list is configured in project settings and ships in the packaged build.
+- Built the station map for a real-time Mass Rapid Transit (MRT) crowd simulator: all of Singapore from OpenStreetMap, streamed in tiles on background threads from 8 regional SQLite databases, with markers for all 238 stations. It draws 30,800 road segments and 2,100 buildings for about 3 ms a frame.
+- Built a one-way throughput counter (people per minute) for Mass Entity agents, which have no collision. After a gantry that blocked navigation and a per-frame check of every agent against every plane, I moved to pooled proxy spheres for agents near a plane only, for performance.
 
 ### Soot & Scoot — Engine Champion <span class="when">Sep 2025 – Apr 2026</span>
 
 SIT team project · Team of 8 · C++, OpenGL, ECS, ImGui, RTTR, Lua (sol2), FMOD, CMake
 {.org}
 
-- Owned the engine core for an 8-person team building a game from scratch on a custom C++ engine. Designed and refactored the Entity Component System, engine loop, window manager and event manager so that gameplay and editor code shared one event-driven architecture.
-- Built roomba AI that navigates a tile-based house, combining A\* pathfinding for routes with context steering over 8 directions (interest/danger maps) for smooth obstacle avoidance. Line-of-sight detection drives 4 behaviour states: patrol, look-around, chase and return.
-- Made editor undo/redo work for any component without per-component code by using RTTR reflection to snapshot components as JSON. Also shipped full scene and runtime-state serialization, hot-reloading prefabs and a tilemap editor in the ImGui level editor.
-- Built a particle system with 3 emitter types (continuous, burst, distance-based trail) for the dust explosion and trail effects. Also added an MPEG video player (pl_mpeg) with audio kept in sync through FMOD for the game's 2 cutscenes.
-- Integrated Lua via sol2 so player movement and the pause menu are scripted outside C++. Built a 7-scene game flow (splash, main menu, level select, pause, cutscene, win, death) with controller support, fullscreen toggle and pause on focus loss.
-
-### Dwarf Mayhem: Into the Depths — Gameplay Programmer <span class="when">Jan 2025 – Mar 2025</span>
-
-SIT team project · Team of 5 · C++, Alpha Engine, cellular automata
-{.org}
-
-- On a 5-person C++ team, owned player mining on a pixel-based cellular simulation. Line-traced cell selection and a highlighting smart cursor let players dig the exact cells they aim at, and the mining area scales with upgrades.
-- Built the inventory system, inventory scene and shop scene that close the dig → sell → upgrade loop, with 4 purchasable upgrades (larger mining size, jetpack, heat armor, full heal).
-- Designed heat damage that scales with depth so that digging deeper carries more risk. Heat armor absorbs it, and 2 UI readouts (armor bar, depth indicator) show it.
+- Owned the core of the team's custom real-time C++/OpenGL engine as its top committer (472 of 1,454 commits in Git): designed the Entity Component System (ECS), engine loop and event manager, and made 34 of the 50 CMake build changes.
+- Gave all 25 component types in the ImGui level editor undo/redo with one generic command that snapshots components as JSON through RTTR runtime reflection, instead of undo code per component.
+- Built navigation for up to 11 roombas on a 55×31 tile grid: replaced a breadcrumb trail that stuttered when retraced with A\* pathfinding, plus context steering over 8 directions for local obstacle avoidance.
+- Built a particle system, an MPEG video player with audio synced through FMOD for 2 cutscenes, and Lua scripting through sol2 for player movement and the pause menu.
 
 ### Portal Mayhem — Weapons Programmer <span class="when">Sep 2024 – Nov 2024</span>
 
 SIT team project · Team of 5 · C, CProcessing
 {.org}
 
-- Main author of the weapon system for a 5-person team in plain C. Shipped 4 weapons (portal gun, pistol, grenade launcher, disk launcher) with weapon switching and sprite rendering, and managed projectile lifetimes through a shared entity array.
-- Implemented teleportation between 2 linked portals that keeps the player's angle and velocity through the exit portal, with a cooldown to prevent instant re-teleports.
-- Made projectiles portal-aware: gravity-affected grenades bounce off tiles and explode on a timer, disks split into 2 after teleporting (with a speed cap), and explosions deal area damage.
-
-## Technical Skills
-
-- **Languages:** C++, C, Lua
-- **Libraries & Engines:** Unreal Engine 5, Mass Entity, SQLite, OpenGL, ImGui, RTTR, sol2, FMOD
-- **Engineering:** Object-Oriented Programming, ECS Architecture, Event-Driven Design, Serialization, Debugging
-- **Tools:** Git, CMake, Visual Studio
-
-## Experience
-
-### Air Force Engineer <span class="when">Aug 2019 – Aug 2023</span>
-
-Republic of Singapore Air Force (RSAF) · Singapore
-{.org}
-
-- Over 4 years, maintained fighter-aircraft serviceability in a high-reliability environment, tracing faults with systematic troubleshooting and closing them to technical procedure.
-- Led a maintenance team to meet maintenance goals while reducing human-factor errors through quality control and clear team communication.
-- Introduced new procedures and technologies that improved efficiency and streamlined operations.
+- Main author of the weapon system in plain C with no engine: 4 weapons, including a portal gun that keeps the player's velocity through linked portals, with projectile lifetimes in a shared entity array.
 
 ## Education
 
@@ -75,6 +56,11 @@ Republic of Singapore Air Force (RSAF) · Singapore
 Bachelor of Science (Honours) in Computer Science in Real-Time Interactive Simulation
 {.org}
 
-## Languages
+## Skills
 
-English (Fluent), Chinese (Native)
+- **Languages:** C++, C, Lua, SQL (SQLite)
+- **Engines & Libraries:** Unreal Engine 5, Mass Entity, OpenGL, ImGui, RTTR, sol2, FMOD
+- **Methods:** ECS, Event-Driven Architecture, Reflection & Serialization, A\* Pathfinding, Steering, Multithreading
+- **Tools:** Git, CMake · **Spoken:** English (Fluent), Chinese (Native)
+
+<!-- Dwarf Mayhem was cut to fit one page; it stays on the portfolio. -->

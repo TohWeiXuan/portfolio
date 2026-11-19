@@ -11,7 +11,9 @@
 
       <div style="margin-top: 20px;">
         On an eight-person team, I designed the Entity Component System and event system for our own C++ engine, wrote scene serialization and undo/redo for its editor,
-        and implemented A* pathfinding. You can see this work on my <router-link to="/projects">projects</router-link> page.
+        and implemented A* pathfinding with steering for its enemy AI. Now I'm on a seven-person team building CROWDCRUSH, a real-time crowd simulator for MRT stations in Unreal Engine 5,
+        where I built a map of all of Singapore with markers for its 238 stations, costing about 3 ms a frame at an 800 m view.
+        You can see this work on my <router-link to="/projects">projects</router-link> page.
       </div>
 
       <div style="margin-top: 20px;">
@@ -20,7 +22,7 @@
       </div>
 
       <div style="margin-top: 40px;">
-        I'm open to software engineering opportunities. Email me at <a href="mailto:toh.weixuan@gmail.com">toh.weixuan@gmail.com</a>,
+        If you're hiring for real-time C++, simulation, engine or tools work, or want to ask how something I built works, email me at <a href="mailto:toh.weixuan@gmail.com">toh.weixuan@gmail.com</a>,
         connect with me on <a href="https://www.linkedin.com/in/wei-xuan-toh-091173436" target="_blank">LinkedIn</a>,
         or read my <router-link to="/resume">resume</router-link> first.
       </div>
